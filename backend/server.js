@@ -31,11 +31,12 @@ app.get('/', (req, res) => {
 
 // add enpoint
 app.post('/add', (req, res) => {
-  // print request
-  console.log(req);
+  const num1 = req.body.num1;
+  const num2 = req.body.num2;
+  const result = num1 + num2;
 
   const data = {
-    text: '/add called'
+    result: result
   };
   res.json(data);
   return;
@@ -43,11 +44,12 @@ app.post('/add', (req, res) => {
 
 // subtract endpoint
 app.post('/subtract', (req, res) => {
-  // print request
-  console.log(req);
+  const num1 = req.body.num1;
+  const num2 = req.body.num2;
+  const result = num1 - num2;
 
   const data = {
-    text: '/subtract called'
+    result: result
   };
   res.json(data);
   return;
@@ -55,11 +57,12 @@ app.post('/subtract', (req, res) => {
 
 // multiply endpoint
 app.post('/multiply', (req, res) => {
-  // print request
-  console.log(req);
+  const num1 = req.body.num1;
+  const num2 = req.body.num2;
+  const result = num1 * num2;
 
   const data = {
-    text: '/multiply called'
+    result: result
   };
   res.json(data);
   return;
@@ -67,11 +70,17 @@ app.post('/multiply', (req, res) => {
 
 // divide enpoint
 app.post('/divide', (req, res) => {
-  // print request
-  console.log(req);
+  const num1 = req.body.num1;
+  const num2 = req.body.num2;
+
+  let result = 0;
+
+  if (num2 !== 0) {
+    result = num1 / num2;
+  }
 
   const data = {
-    text: '/divide called'
+    result: result
   };
   res.json(data);
   return;

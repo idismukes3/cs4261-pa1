@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
 import Row from "./App/components/Row";
 import Button from "./App/components/Button";
+import { add } from "./App/services/calculator-service";
 
 export default function App() {
   const [currVal, setCurrVal] = useState("0");
@@ -38,6 +39,7 @@ export default function App() {
       const previous = parseFloat(prevVal);
 
       if (operator === "+") {
+        add(previous, current);
         setCurrVal(previous + current);
         setOperator(null);
         setPrevVal(null);

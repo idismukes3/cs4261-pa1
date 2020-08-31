@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
 import Row from "./App/components/Row";
 import Button from "./App/components/Button";
-import { add } from "./App/services/calculator-service";
+import {
+  add,
+  subtract,
+  multiply,
+  divide,
+} from "./App/services/calculator-service";
 
 export default function App() {
   const [currVal, setCurrVal] = useState("0");
@@ -46,19 +51,22 @@ export default function App() {
       }
 
       if (operator === "/") {
-        setCurrVal(previous / current);
+        const value = await divide(previous, current);
+        setCurrVal(value);
         setOperator(null);
         setPrevVal(null);
       }
 
       if (operator === "-") {
-        setCurrVal(previous - current);
+        const value = await subtract(previous, current);
+        setCurrVal(value);
         setOperator(null);
         setPrevVal(null);
       }
 
       if (operator === "*") {
-        setCurrVal(previous * current);
+        const value = await multiply(previous, current);
+        setCurrVal(value);
         setOperator(null);
         setPrevVal(null);
       }

@@ -9,7 +9,7 @@ export default function App() {
   const [operator, setOperator] = useState(null);
   const [prevVal, setPrevVal] = useState(null);
 
-  handleTap = (type, value) => {
+  handleTap = async (type, value) => {
     if (type === "number") {
       setCurrVal(`${currVal}${value}`);
     }
@@ -39,8 +39,8 @@ export default function App() {
       const previous = parseFloat(prevVal);
 
       if (operator === "+") {
-        add(previous, current);
-        setCurrVal(previous + current);
+        const value = await add(previous, current);
+        setCurrVal(value);
         setOperator(null);
         setPrevVal(null);
       }

@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
 import Row from "./App/components/Row";
 import Button from "./App/components/Button";
+import { add } from "./App/services/calculator-service";
 
 export default function App() {
   const [currVal, setCurrVal] = useState("0");
   const [operator, setOperator] = useState(null);
   const [prevVal, setPrevVal] = useState(null);
 
-  handleTap = (type, value) => {
+  handleTap = async (type, value) => {
     if (type === "number") {
       setCurrVal(`${currVal}${value}`);
     }
@@ -38,7 +39,8 @@ export default function App() {
       const previous = parseFloat(prevVal);
 
       if (operator === "+") {
-        setCurrVal(previous + current);
+        const value = await add(previous, current);
+        setCurrVal(value);
         setOperator(null);
         setPrevVal(null);
       }

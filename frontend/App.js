@@ -16,7 +16,11 @@ export default function App() {
 
   handleTap = async (type, value) => {
     if (type === "number") {
-      setCurrVal(`${currVal}${value}`);
+      if (parseFloat(currVal) == 0) {
+        setCurrVal(`${value}`);
+      } else {
+        setCurrVal(`${currVal}${value}`);
+      }
     }
 
     if (type === "operator") {

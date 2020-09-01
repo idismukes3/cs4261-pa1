@@ -13,6 +13,7 @@ Running `npm start` will run the app on port 3000 by default.
 ### Using the app
 This app was hosted with [Heroku](https://dashboard.heroku.com/apps), and the deployed instance can be found [here](https://cs4261-pa1.herokuapp.com).
 To make API calls to the server, we recommend using [Postman](https://www.postman.com/) or [cURL](https://curl.haxx.se/).
+A Postman Collection is included in the `postman-collection/` folder.
 
 ---
 |Endpoint | HTTP Method | Body | Description |

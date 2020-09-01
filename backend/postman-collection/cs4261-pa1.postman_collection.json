@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "e8f03c43-e2c9-49ba-8d24-ee4dcba14547",
+		"name": "cs4261-pa1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Base Information",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"num1\": 1,\n\t\"num2\": 10\n}"
+				},
+				"url": {
+					"raw": "https://cs4261-pa1.herokuapp.com",
+					"protocol": "https",
+					"host": [
+						"cs4261-pa1",
+						"herokuapp",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"num1\": 1,\n\t\"num2\": 10\n}"
+				},
+				"url": {
+					"raw": "https://cs4261-pa1.herokuapp.com/add",
+					"protocol": "https",
+					"host": [
+						"cs4261-pa1",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subtract",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"num1\": 1,\n\t\"num2\": 10\n}"
+				},
+				"url": {
+					"raw": "https://cs4261-pa1.herokuapp.com/subtract",
+					"protocol": "https",
+					"host": [
+						"cs4261-pa1",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"subtract"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multiply",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"num1\": 1,\n\t\"num2\": 10\n}"
+				},
+				"url": {
+					"raw": "https://cs4261-pa1.herokuapp.com/multiply",
+					"protocol": "https",
+					"host": [
+						"cs4261-pa1",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"multiply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Divide",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"num1\": 1,\n\t\"num2\": 10\n}"
+				},
+				"url": {
+					"raw": "https://cs4261-pa1.herokuapp.com/divide",
+					"protocol": "https",
+					"host": [
+						"cs4261-pa1",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"divide"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

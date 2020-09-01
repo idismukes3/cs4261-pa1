@@ -11,16 +11,19 @@ import {
 
 export default function App() {
   const [currVal, setCurrVal] = useState("0");
-  const [operator, setOperator] = useState(null);
   const [prevVal, setPrevVal] = useState(null);
+  const [operator, setOperator] = useState(null);
+  const [opComplete, setOpComplete] = useState(true);
 
   handleTap = async (type, value) => {
     if (type === "number") {
-      if (parseFloat(currVal) == 0) {
+      if (parseFloat(currVal) === 0 || opComplete) {
         setCurrVal(`${value}`);
       } else {
         setCurrVal(`${currVal}${value}`);
       }
+
+      setOpComplete(false);
     }
 
     if (type === "operator") {
@@ -74,6 +77,8 @@ export default function App() {
         setOperator(null);
         setPrevVal(null);
       }
+
+      setOpComplete(true);
     }
   };
 
